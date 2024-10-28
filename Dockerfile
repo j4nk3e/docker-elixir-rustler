@@ -25,6 +25,8 @@ RUN set -eux \
 		openssh \
 		tar \
 		git \
+		npm \
+		nodejs \
 	' \
 	&& apk add --no-cache $buildDeps \
 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL \
