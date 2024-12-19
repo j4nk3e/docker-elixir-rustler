@@ -11,7 +11,7 @@ RUN dnf install -y epel-release; \
 	dnf config-manager --set-enabled crb; \
 	dnf install -y https://dl.fedoraproject.org/pub/epel/epel{,-next}-release-latest-9.noarch.rpm; \
 	dnf install -y erlang automake gcc pkgconfig openssl-devel ansible openssh git git-lfs npm nodejs; \
-	curl -fSL -o elixir-src.tar.gz "https://github.com/elixir-lang/elixir/archive/v1.17.3.tar.gz"; \
+	curl -fSL -o elixir-src.tar.gz "https://github.com/elixir-lang/elixir/archive/v1.18.0.tar.gz"; \
 	mkdir -p /usr/local/src/elixir; \
 	tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz; \
 	rm elixir-src.tar.gz; \
