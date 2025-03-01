@@ -10,7 +10,9 @@ ENV LANG=C.UTF-8 \
 RUN dnf install -y epel-release; \
 	dnf config-manager --set-enabled crb; \
 	dnf install -y https://dl.fedoraproject.org/pub/epel/epel{,-next}-release-latest-9.noarch.rpm; \
-	dnf install -y erlang automake gcc pkgconfig openssl-devel ansible openssh git git-lfs npm nodejs; \
+	dnf module -y enable nodejs:20; \
+	dnf module -y install nodejs:20/common; \
+	dnf install -y erlang automake gcc pkgconfig openssl-devel ansible openssh git git-lfs npm; \
 	curl -fSL -o elixir-src.tar.gz "https://github.com/elixir-lang/elixir/archive/v1.18.0.tar.gz"; \
 	mkdir -p /usr/local/src/elixir; \
 	tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz; \
